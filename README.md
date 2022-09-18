@@ -19,3 +19,16 @@
 - cap.get() 获取视频属性
 - cap.set() 设置视频属性
 - cap.release() 释放视频
+
+# 鼠标控制
+
+- setMouseCallback(winname,callback,userdata)
+- callback(event,x,y,flags,userdata)
+
+# TrackBar
+
+- createTrackbar(trackbarName,winname,value,count,callback) value 当前值 count 最大值 callback 回调函数
+- callback(value)
+- getTrackbarPos(trackbarName,winname)
+
+不知道是什么问题 窗口会闪退

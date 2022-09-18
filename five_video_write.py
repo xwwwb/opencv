@@ -10,7 +10,7 @@ cv2.resizeWindow("video", 640, 480)
 cap = cv2.VideoCapture(0)
 
 framewidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-frameheight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+frameheight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  
 
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')
 vw = cv2.VideoWriter('./resource/five_output.mp4', fourcc, 33, (int(framewidth), int(frameheight)))
