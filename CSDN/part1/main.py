@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 # 读取图像
-img_OpenCV = cv2.imread('./part1/demo.jpg')
+img_OpenCV = cv2.imread('./CSDN/part1/demo.jpg')
 # 将OpenCV的BGR格式转换为RGB格式
 b, g, r = cv2.split(img_OpenCV)
 # 将RGB格式的图像合并为一个三通道的图像
@@ -63,7 +63,7 @@ cv2.waitKey(0)
 
 # 灰度相关
 # 传入第二个标志位
-gray_img = cv2.imread('./part1/demo.jpg', cv2.IMREAD_GRAYSCALE)
+gray_img = cv2.imread('./CSDN/part1/demo.jpg', cv2.IMREAD_GRAYSCALE)
 print("灰度图像无通道", gray_img.shape)
 # 这里i只能获得一个值 称为像素强度
 i = gray_img[1000, 1000]
