@@ -22,7 +22,7 @@
 
 # 鼠标控制
 
-- setMouseCallback(winname,callback,userdata)
+- setMouseCallback(winname,callback,us erdata)
 - callback(event,x,y,flags,userdata)
 
 # TrackBar
@@ -32,3 +32,15 @@
 - getTrackbarPos(trackbarName,winname)
 
 不知道是什么问题 窗口会闪退
+
+
+# 色彩空间
+HSV(HSB)
+Hue: 色相，色彩，红色，蓝色
+Saturation: 饱和度，纯度，鲜艳程度
+Value: 亮度，明度，明亮程度 Brightness
+
+YUV 常用作视频中
+YUV 4:2:0
+YUV 4:2:2
+YUV 4:4:4
