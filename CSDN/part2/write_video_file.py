@@ -17,7 +17,7 @@ frame_width = capture.get(cv2.CAP_PROP_FRAME_WIDTH)
 frame_height = capture.get(cv2.CAP_PROP_FRAME_HEIGHT)
 fps = capture.get(cv2.CAP_PROP_FPS)
 
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
+fourcc = cv2.VideoWriter_fourcc(*'MJPG')
 
 out_gray = cv2.VideoWriter(args.output_video_path, fourcc, int(
     fps), (int(frame_width), int(frame_width)), False)
