@@ -63,3 +63,9 @@ addWeighted(A,alpha,B,beta,gamma)
 aplha A 的权重
 beta B 的权重
 gamma 静态权重
+
+# 图像翻转
+flip(img,flipCode)
+flipCode == 0 上下
+flipCode > 0 左右
+flipCode < 0 上下加左右
