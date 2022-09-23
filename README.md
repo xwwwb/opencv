@@ -56,3 +56,10 @@ YUV 4:4:4
 - [y,x,channel] 通道索引 可以认为 [y,x,z]
 
 # Mat
+
+# 图像融合
+
+addWeighted(A,alpha,B,beta,gamma)
+aplha A 的权重
+beta B 的权重
+gamma 静态权重
