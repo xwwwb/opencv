@@ -1,3 +1,6 @@
+# author: xwwwb
+# date: 2022-09-23
+# description: 绘制图形
 from math import fabs
 import cv2
 import numpy as np
@@ -24,6 +27,9 @@ pts = np.array([(300, 10), (150, 100), (450, 100)], np.int32)
 cv2.polylines(img, [pts], True, (30, 30, 245), 1, 16)
 # 用fillPoly填充
 cv2.fillPoly(img, [pts], (255, 0, 0))
+# 绘制文本
+cv2.putText(img,"Hello World!",(10,400),4,4,(50,50,255))
+
 
 cv2.imshow('draw', img)
 
