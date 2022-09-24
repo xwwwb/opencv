@@ -1,3 +1,7 @@
+- [] B 站课程
+- [] CSDN 课程
+- [] C++重写
+
 # 创建和显示窗口
 
 - namedWindow() 给窗口打编号
@@ -65,7 +69,34 @@ beta B 的权重
 gamma 静态权重
 
 # 图像翻转
+
 flip(img,flipCode)
 flipCode == 0 上下
 flipCode > 0 左右
 flipCode < 0 上下加左右
+
+# 图像旋转
+
+rotate(img,rotateCode)
+
+ROTATE_90_CLOCKWISE
+ROTATE_180
+ROTATE_90_COUNTERCLOCKWISE
+
+# 仿射变换
+
+仿射变换是 图像旋转，缩放，平移的总称
+warpAffine(src,M,dsize,flags,mode,value)
+
+src 输入图像
+M 变换矩阵
+dsize 输出图像大小
+flags 插值方法
+mode 边界填充模式
+value 边界填充值
+
+变换矩阵
+getRotationMatrix2D(center,angle,scale)
+center 旋转中心
+angle 旋转角度 逆时针
+scale 缩放比例
