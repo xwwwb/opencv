@@ -100,3 +100,28 @@ getRotationMatrix2D(center,angle,scale)
 center 旋转中心
 angle 旋转角度 逆时针
 scale 缩放比例
+
+# 滤波API
+方盒滤波 boxFilter(src,ddepth,ksize,anchor,normalize,borderType)
+src 输入图像
+ddepth 输出图像深度
+ksize 滤波器大小
+anchor 锚点
+normalize 是否归一化 若为True 就是均值滤波
+borderType 边界填充模式、
+
+均值滤波 blur(src,ksize,anchor,borderType)
+src 输入图像
+ksize 滤波器大小
+anchor 锚点
+borderType 边界填充模式
+
+当方盒滤波当 normalize 为 True 时，就是均值滤波
+
+# 高斯滤波
+GaussianBlur(src,ksize,sigmaX,sigmaY,borderType)
+src 输入图像
+ksize 滤波器大小
+sigmaX X 方向的标准差 钟形的延展长度 x
+sigmaY Y 方向的标准差 钟形的延展长度 y
+borderType 边界填充模式

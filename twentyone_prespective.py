@@ -1,8 +1,6 @@
 # author: xwwwb
 # date: 2022-09-25
 # description: 透视变换
-from math import fabs
-from re import T
 import cv2
 import numpy as np
 
@@ -24,13 +22,13 @@ dst = np.float32([
 def mouse_callback(event, x, y, flags, data):
     if event == cv2.EVENT_LBUTTONUP:
         point.append((x, y))
-        if len(point) > 1 and len(point) < 5:
-            cv2.line(img, (point[len(point)-2][0],
-                     point[len(point)-2][1]), (x, y), (0, 0, 255), 10, 16)
-
-    if len(point) == 4:
+        if 1 < len(point) < 5:
+            cv2.line(img, (point[len(point) - 2][0],
+                           point[len(point) - 2][1]), (x, y), (0, 0, 255), 10, 16)
+    global new, showNew
+    if len(point) == 4 and not showNew :
         cv2.line(img, (point[0][0], point[0][1]), (x, y), (0, 0, 255), 10, 16)
-        global new, showNew
+
         # 选定了四个点
         src = np.float32([
             [point[0][0], point[0][1]],
@@ -54,6 +52,5 @@ while True:
     key = cv2.waitKey(2)
     if key & 0xff == ord('q'):
         break
-
 
 cv2.destroyAllWindows()
