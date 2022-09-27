@@ -101,7 +101,30 @@ center 旋转中心
 angle 旋转角度 逆时针
 scale 缩放比例
 
+# 低通滤波
+
+> 主要做图像模糊处理
+> 降噪
+
+均值
+高斯
+中值
+双边
+
+# 高通滤波
+
+> 主要做图像锐化处理
+> 增强边缘
+> 增强对比度
+> 增强细节
+> 增强纹理
+
+Sobel 索贝尔
+Scharr 沙尔 3x3 索贝尔的size是-1 自动使用沙尔
+Laplacian 拉普拉斯 不带降噪
+
 # 滤波API
+
 方盒滤波 boxFilter(src,ddepth,ksize,anchor,normalize,borderType)
 src 输入图像
 ddepth 输出图像深度
@@ -119,9 +142,47 @@ borderType 边界填充模式
 当方盒滤波当 normalize 为 True 时，就是均值滤波
 
 # 高斯滤波
+
 GaussianBlur(src,ksize,sigmaX,sigmaY,borderType)
 src 输入图像
 ksize 滤波器大小
 sigmaX X 方向的标准差 钟形的延展长度 x
 sigmaY Y 方向的标准差 钟形的延展长度 y
 borderType 边界填充模式
+
+# Sobel API
+
+Sobel(src,ddepth,dx,dy,ksize,scale,borderType)
+src 输入图像
+ddepth 输出图像深度
+dx X 方向导数
+dy Y 方向导数
+ksize 滤波器大小 默认3 设为-1的时候使用3x3的Scharr 滤波器
+
+# 加法：
+
+使用cv2.add()将两个图像相加，可以使用numpy中的矩阵加法来实现。但是在opencv中加法是饱和操作，也就是有上限值，numpy会对结果取模。
+
+# 图像上的加法
+
+大致有两种:
+cv2.add():这是一个饱和操作
++:  这是Numpy中的运算，之一种模操作，res = img1 + img2
+注意两幅图片的大小类型必须一致，或者第二个图象是一个标量
+由于两者的差别，我们一般多用cv2.add(src1, src2)
+
+# 拉普拉斯算子
+
+> 可以同时求两个方向的边缘
+> 对噪音敏感，一般需要先进行去燥在调用拉普拉斯
+
+Laplacian(src,ddepth,ksize,scale,borderType)
+
+# Canny 边缘检测
+
+1. 使用5x5高斯滤波消除噪音
+2. 计算图像梯度的方向 0 45 90 135
+3. 取局部极大值
+4. 阈值计算
+
+Canney(img,minVal,maxVal)
