@@ -1,6 +1,8 @@
-- [] B 站课程
-- [] CSDN 课程
-- [] C++重写
+- [ ] B 站课程
+
+- [ ] CSDN 课程
+
+- [ ] C++重写
 
 # 创建和显示窗口
 
@@ -186,3 +188,29 @@ Laplacian(src,ddepth,ksize,scale,borderType)
 4. 阈值计算
 
 Canney(img,minVal,maxVal)
+
+# 形态学
+一般用黑白图片处理
+
+# 二值化
+全局二值化
+threshold(img,thresh,maxValue,type)
+img 输入图像
+thresh 阈值
+maxValue 最大值 超过最大值换成maxValue 假设为200 阈值100 超过100的都换成200
+type 阈值类型如图
+
+![threshold.png](images_md/threshold.png)
+
+![image-20220927211851941](images_md//image-20220927211851941.png)
+
+# 自适应阈值
+
+由于光照不均匀以及阴影的存在
+
+只有一个阈值会使得在阴影处的白色被二值化成黑色
+
+<img src="images_md//image-20220927213057755.png" alt="image-20220927213057755" style="zoom:50%;" />
+
+adaptiveThreshold API
+adaptiveThreshold(img,maxValue,adaptiveMethod,thresholdType,blockSize,C)
