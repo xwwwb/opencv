@@ -212,5 +212,19 @@ type 阈值类型如图
 
 <img src="images_md//image-20220927213057755.png" alt="image-20220927213057755" style="zoom:50%;" />
 
-adaptiveThreshold API
+adaptiveThreshold API 
 adaptiveThreshold(img,maxValue,adaptiveMethod,thresholdType,blockSize,C)
+
+# 腐蚀
+
+erode(img,kernel,iterations = 1)
+
+iterations 是腐蚀次数
+
+# 开运算
+先腐蚀 在膨胀
+可以去毛刺
+
+# 闭运算
+先膨胀 再腐蚀
+去除内部的毛刺
