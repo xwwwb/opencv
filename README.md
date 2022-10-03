@@ -191,6 +191,7 @@ Canney(img,minVal,maxVal)
 
 # 形态学
 一般用黑白图片处理
+https://zhuanlan.zhihu.com/p/110330329
 
 # 二值化
 全局二值化
@@ -242,3 +243,43 @@ iterations 是腐蚀次数
 # 黑帽运算
 
 原图-闭运算 可以留下内部的毛刺和噪点
+
+# 图像轮廓
+
+具有相同颜色或者强度的连续点的曲线
+
+1. 可以用于图形分析
+2. 物体的识别与检测
+
+为了检测的准确性，需要先对图像进行二值化或者Canny操作
+
+findContours(img,mode,ApproximationMode)
+
+返回值有两个 contours 轮廓列表 hierarchy 层级
+
+## mode
+
+https://www.cnblogs.com/wojianxin/p/12602490.html
+
+RETR_EXTERNAL=0 表示只检测外轮廓 计算量较少
+
+<img src="images_md//image-20221003210336703.png" alt="image-20221003210336703" style="zoom:50%;" />
+
+RETR_LIST=1 轮廓不建立等级关系
+
+<img src="images_md//image-20221003210442247.png" alt="image-20221003210442247" style="zoom:50%;" />
+
+RETR_CCOMP=2 每层最多两级
+<img src="images_md//image-20221003211048751.png" alt="image-20221003211048751" style="zoom:50%;" />
+
+RETR_TREE=3 按树形存储轮廓
+
+<img src="images_md//image-20221003210658095.png" alt="image-20221003210658095" style="zoom:50%;" /> 
+
+
+
+ApproximationMode
+
+CHAIN_APPROX_NONE 保存所有轮廓上的点
+
+CHAIN_APPROX_SIMPLE 只保存角点
