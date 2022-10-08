@@ -283,3 +283,16 @@ ApproximationMode
 CHAIN_APPROX_NONE 保存所有轮廓上的点
 
 CHAIN_APPROX_SIMPLE 只保存角点
+
+# 多边形逼近 凸包
+
+<img src="images_md//image-20221008160202977.png" alt="image-20221008160202977" style="zoom:50%;" />
+
+approxPolyDP(curve,epslion,closed)
+curve 输入的轮廓
+epslion 轮廓的精度
+closed 是否闭合
+
+convexHull(points,clockwise)
+points 输入的点
+clockwise 是否顺时针
