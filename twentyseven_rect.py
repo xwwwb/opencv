@@ -1,23 +1,8 @@
 # author: xwwwb
 # date: 2022-10-3
-# description: 外接矩阵
+# description: 外接矩形
 import cv2
 import numpy as np
-
-
-def drawShape(src, points):
-    i = 0
-    while i < len(points):
-        if i == len(points) - 1:
-            x, y = points[i][0]
-            x1, y1 = points[0][0]
-            cv2.line(src, (x, y), (x1, y1), (0, 0, 255), 2)
-        else:
-            x, y = points[i][0]
-            x1, y1 = points[i + 1][0]
-            cv2.line(src, (x, y), (x1, y1), (0, 0, 255), 2)
-        i += 1
-
 
 img = cv2.imread('./resource/hello.png')
 # 单通道
@@ -30,7 +15,7 @@ contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_S
 
 cv2.drawContours(img, contours, 1, (0, 244, 0), 2)
 
-# 最小外接矩阵
+# 最小外接矩形
 rect = cv2.minAreaRect(contours[1])
 print(rect)
 box = cv2.boxPoints(rect)
@@ -39,8 +24,15 @@ print(box)
 print([box])
 cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
 
-# 边界矩阵
+# 边界矩形
+rect_2 = cv2.boundingRect(contours[1])
+[x, y, w, h] = rect_2
+print(rect_2)
+cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
+rect_3 = cv2.boundingRect(contours[5])
+[x_, y_, w_, h_] = rect_3
+cv2.rectangle(img, (x_, y_), (x_ + w_, y_ + h_), (0, 255, 0), 2)
 
 cv2.imshow('binary', binary)
 cv2.imshow('img', img)

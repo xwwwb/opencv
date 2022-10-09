@@ -331,4 +331,10 @@ boundingRect(array)    边界Rect
 
 Array 轮廓
 
-返回值 Rect 宽 高
+返回值 Rect
+
+四个 x y w h
+
+分别是左上角坐标和宽高
+
+![image-20221009172249132](images_md//image-20221009172249132.png)
