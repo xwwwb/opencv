@@ -296,3 +296,39 @@ closed 是否闭合
 convexHull(points,clockwise)
 points 输入的点
 clockwise 是否顺时针
+
+# 外接矩阵
+
+<img src="images_md//image-20221009082942137.png" alt="image-20221009082942137" style="zoom:50%;" />
+
+## 最小外接矩阵
+
+minAreaRect(points)   最小Rect
+
+points 轮廓
+
+可以得到任意多边形的最小外接矩阵 得到的类型是 rotatedRect
+
+最小外接矩阵的中心 宽高 旋转角度
+
+无法直接绘制
+
+通过BoxPoints得到四个顶点的坐标 看下图
+
+![img](images_md/Center.png)
+
+然后转为int型
+
+drawContours好像是要传入一个三维 顶点集
+
+但是以上的得到的是二维 再加一个括号变三维传入drawContours
+
+然后使用drawContours可以画出来
+
+![image-20221009165223830](images_md//image-20221009165223830.png)
+
+boundingRect(array)    边界Rect
+
+Array 轮廓
+
+返回值 Rect 宽 高
