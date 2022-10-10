@@ -26,11 +26,13 @@ ret, binary = cv2.threshold(gray, 130, 255, cv2.THRESH_BINARY)
 
 # 轮廓查找
 contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-
+print(contours)
 img_contours = cv2.drawContours(img, contours, -1, (0, 244, 0), 2)
 
 e = 30
+# approx 近似的 Polygon 多边形 DP好像是算法名字
 approx = cv2.approxPolyDP(contours[0], e, True)
+# convex 凸面的 Hull 外壳
 hull = cv2.convexHull(contours[0])
 print(approx)
 print(approx.shape)

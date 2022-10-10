@@ -16,7 +16,7 @@ contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_S
 cv2.drawContours(img, contours, 1, (0, 244, 0), 2)
 
 # 最小外接矩形
-rect = cv2.minAreaRect(contours[1])
+rect = cv2.minAreaRect(contours[3])
 print(rect)
 box = cv2.boxPoints(rect)
 box = np.int0(box)
@@ -30,7 +30,7 @@ rect_2 = cv2.boundingRect(contours[1])
 print(rect_2)
 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-rect_3 = cv2.boundingRect(contours[5])
+rect_3 = cv2.boundingRect(contours[3])
 [x_, y_, w_, h_] = rect_3
 cv2.rectangle(img, (x_, y_), (x_ + w_, y_ + h_), (0, 255, 0), 2)
 
