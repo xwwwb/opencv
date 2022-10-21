@@ -1,7 +1,6 @@
 # author: xwwwb
 # date: 2022-09-23
 # description: 绘制图形
-from math import fabs
 import cv2
 import numpy as np
 

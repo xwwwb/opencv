@@ -5,7 +5,7 @@ import cv2
 
 img = cv2.imread('./resource/demo2.jpg')
 
-dst = cv2.GaussianBlur(img, (5, 5), sigmaX=10, sigmaY=100)
+dst = cv2.GaussianBlur(img, (9, 9), sigmaX=10, sigmaY=100)
 
 cv2.imshow('dst', dst)
 cv2.imshow('img', img)
